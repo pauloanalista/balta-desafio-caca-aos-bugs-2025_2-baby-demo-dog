@@ -40,8 +40,8 @@ namespace BugStore.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("/v1/customers/{id}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        [Route("/v1/customers/{id:Guid}")]
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             try
             {
@@ -75,11 +75,12 @@ namespace BugStore.Controllers
 
         [AllowAnonymous]
         [HttpPut]
-        [Route("/v1/customers/{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody]UpdateRequest request)
+        [Route("/v1/customers/{id:Guid}")]
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody]UpdateRequest request)
         {
             try
             {
+                request.Id = id;
                 var result = await _mediator.Send(request, CancellationToken.None);
                 return Ok(result);
             }
@@ -92,8 +93,8 @@ namespace BugStore.Controllers
 
         [AllowAnonymous]
         [HttpDelete]
-        [Route("/v1/customers/{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        [Route("/v1/customers/{id:Guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try
             {

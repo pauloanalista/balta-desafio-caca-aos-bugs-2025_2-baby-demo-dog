@@ -1,7 +1,7 @@
 using MediatR;
 using System.Net;
 
-namespace BugStore.Domain.Commands.Customer.GetById;
+namespace BugStore.Application.Domain.Commands.Customer.GetById;
 
 public class GetByIdRequest : IRequest<GetByIdResponse>
 {

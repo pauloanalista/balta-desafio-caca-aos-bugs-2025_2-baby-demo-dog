@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace BugStore.Domain.Commands.Customer.Delete;
+namespace BugStore.Application.Domain.Commands.Customer.Delete;
 
 public class DeleteRequest : IRequest<DeleteResponse>
 {

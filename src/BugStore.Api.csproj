@@ -16,4 +16,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\Contracts\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BugStore.Application\BugStore.Application.csproj" />
+    <ProjectReference Include="..\BugStore.Infra\BugStore.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
