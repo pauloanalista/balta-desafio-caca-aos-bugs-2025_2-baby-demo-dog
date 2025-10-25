@@ -1,4 +1,4 @@
-using BugStore.Models;
+using BugStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BugStore.Data;
